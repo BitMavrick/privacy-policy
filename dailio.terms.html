@@ -1,0 +1,955 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="description" content="Terms of Use for Dailio, a local-first habit tracker for Android.">
+    <meta name="color-scheme" content="light dark">
+    <title>Terms of Use — Dailio</title>
+    <!--
+    Before publishing:
+    1. Replace every support@example.com with your public support address.
+    2. Update the effective and last-updated dates if needed.
+    3. Host this file together with privacy-policy.html.
+  -->
+    <style>
+        :root {
+            color-scheme: light dark;
+            --bg: #f6f9f3;
+            --surface: #ffffff;
+            --surface-soft: #edf4e8;
+            --text: #172015;
+            --muted: #5c6955;
+            --border: #dce6d5;
+            --accent: #2b6c17;
+            --accent-strong: #1f5110;
+            --accent-soft: #e4f1dd;
+            --shadow: 0 18px 45px rgba(31, 61, 21, 0.08);
+            --radius: 20px;
+            --measure: 72ch;
+        }
+
+        @media (prefers-color-scheme: dark) {
+            :root {
+                --bg: #10150e;
+                --surface: #181e15;
+                --surface-soft: #1e271a;
+                --text: #e8eee4;
+                --muted: #a5b29d;
+                --border: #2b3625;
+                --accent: #8fd07a;
+                --accent-strong: #b4e6a4;
+                --accent-soft: #24321e;
+                --shadow: 0 18px 45px rgba(0, 0, 0, 0.28);
+            }
+        }
+
+        * {
+            box-sizing: border-box;
+        }
+
+        html {
+            scroll-behavior: smooth;
+            scroll-padding-top: 28px;
+        }
+
+        body {
+            margin: 0;
+            background:
+                radial-gradient(circle at 12% -10%, var(--accent-soft), transparent 32rem),
+                var(--bg);
+            color: var(--text);
+            font-family: system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
+            line-height: 1.7;
+            -webkit-font-smoothing: antialiased;
+            text-rendering: optimizeLegibility;
+        }
+
+        a {
+            color: var(--accent);
+            text-decoration-thickness: 1px;
+            text-underline-offset: 3px;
+        }
+
+        a:hover {
+            color: var(--accent-strong);
+        }
+
+        :focus-visible {
+            outline: 3px solid var(--accent);
+            outline-offset: 3px;
+            border-radius: 4px;
+        }
+
+        .skip-link {
+            position: absolute;
+            left: 16px;
+            top: -80px;
+            z-index: 20;
+            padding: 10px 14px;
+            border-radius: 10px;
+            background: var(--surface);
+            color: var(--text);
+            box-shadow: var(--shadow);
+            text-decoration: none;
+        }
+
+        .skip-link:focus {
+            top: 16px;
+        }
+
+        .wrap {
+            width: min(1080px, calc(100% - 40px));
+            margin-inline: auto;
+        }
+
+        .site-header {
+            border-bottom: 1px solid var(--border);
+            background: color-mix(in srgb, var(--bg) 88%, transparent);
+            backdrop-filter: blur(14px);
+            position: sticky;
+            top: 0;
+            z-index: 10;
+        }
+
+        .header-inner {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            gap: 24px;
+            min-height: 72px;
+        }
+
+        .brand {
+            display: inline-flex;
+            align-items: center;
+            gap: 11px;
+            color: var(--text);
+            text-decoration: none;
+            font-weight: 800;
+            letter-spacing: -0.02em;
+            font-size: 1.15rem;
+        }
+
+        .brand-mark {
+            display: grid;
+            place-items: center;
+            width: 38px;
+            height: 38px;
+            border-radius: 12px;
+            background: var(--accent);
+            color: #ffffff;
+            box-shadow: 0 8px 18px rgba(43, 108, 23, 0.24);
+        }
+
+        .brand-mark svg {
+            width: 22px;
+            height: 22px;
+        }
+
+        .header-nav {
+            display: flex;
+            align-items: center;
+            gap: 6px;
+            flex-wrap: wrap;
+            justify-content: flex-end;
+        }
+
+        .header-nav a {
+            display: inline-block;
+            padding: 8px 12px;
+            border-radius: 999px;
+            color: var(--muted);
+            text-decoration: none;
+            font-size: 0.92rem;
+            font-weight: 650;
+        }
+
+        .header-nav a:hover {
+            background: var(--surface-soft);
+            color: var(--text);
+        }
+
+        .header-nav a[aria-current="page"] {
+            background: var(--accent-soft);
+            color: var(--accent-strong);
+        }
+
+        .page-head {
+            max-width: 780px;
+            padding: 64px 0 34px;
+        }
+
+        .eyebrow {
+            margin: 0 0 12px;
+            color: var(--accent);
+            font-size: 0.78rem;
+            font-weight: 800;
+            letter-spacing: 0.14em;
+            text-transform: uppercase;
+        }
+
+        h1 {
+            margin: 0;
+            font-size: clamp(2.35rem, 5.5vw, 3.9rem);
+            line-height: 1.04;
+            letter-spacing: -0.045em;
+        }
+
+        .meta {
+            margin: 18px 0 0;
+            color: var(--muted);
+            font-size: 0.93rem;
+        }
+
+        .lede {
+            margin: 22px 0 0;
+            color: var(--muted);
+            font-size: 1.08rem;
+            max-width: 68ch;
+        }
+
+        .summary {
+            display: grid;
+            gap: 12px;
+            margin: 30px 0 0;
+            padding: 20px 22px;
+            border: 1px solid var(--border);
+            border-left: 4px solid var(--accent);
+            border-radius: 14px;
+            background: var(--surface);
+            box-shadow: var(--shadow);
+        }
+
+        .summary strong {
+            display: block;
+            color: var(--text);
+            font-size: 0.82rem;
+            letter-spacing: 0.1em;
+            text-transform: uppercase;
+        }
+
+        .summary p {
+            margin: 0;
+        }
+
+        .layout {
+            display: grid;
+            grid-template-columns: 230px minmax(0, 1fr);
+            gap: 52px;
+            align-items: start;
+            padding: 28px 0 80px;
+        }
+
+        .toc {
+            position: sticky;
+            top: 96px;
+            padding: 18px;
+            border: 1px solid var(--border);
+            border-radius: 16px;
+            background: color-mix(in srgb, var(--surface) 82%, transparent);
+        }
+
+        .toc h2 {
+            margin: 0 0 10px;
+            font-size: 0.78rem;
+            letter-spacing: 0.12em;
+            text-transform: uppercase;
+            color: var(--muted);
+        }
+
+        .toc ol {
+            margin: 0;
+            padding: 0;
+            list-style: none;
+            counter-reset: toc;
+            display: grid;
+            gap: 3px;
+        }
+
+        .toc li {
+            counter-increment: toc;
+        }
+
+        .toc a {
+            display: block;
+            padding: 5px 7px;
+            border-radius: 7px;
+            color: var(--muted);
+            text-decoration: none;
+            font-size: 0.87rem;
+            line-height: 1.35;
+        }
+
+        .toc a::before {
+            content: counter(toc) ". ";
+            color: var(--accent);
+            font-variant-numeric: tabular-nums;
+        }
+
+        .toc a:hover {
+            background: var(--surface-soft);
+            color: var(--text);
+        }
+
+        .content {
+            min-width: 0;
+            max-width: var(--measure);
+        }
+
+        .content section {
+            padding: 30px 0;
+            border-top: 1px solid var(--border);
+        }
+
+        .content section:first-child {
+            padding-top: 0;
+            border-top: 0;
+        }
+
+        h2 {
+            margin: 0 0 12px;
+            font-size: clamp(1.35rem, 2.3vw, 1.7rem);
+            line-height: 1.2;
+            letter-spacing: -0.025em;
+        }
+
+        h3 {
+            margin: 24px 0 8px;
+            font-size: 1.02rem;
+            line-height: 1.35;
+            letter-spacing: -0.01em;
+        }
+
+        p {
+            margin: 0 0 14px;
+        }
+
+        p:last-child {
+            margin-bottom: 0;
+        }
+
+        ul,
+        ol {
+            margin: 0 0 16px;
+            padding-left: 1.35rem;
+        }
+
+        li {
+            margin: 7px 0;
+        }
+
+        li::marker {
+            color: var(--accent);
+        }
+
+        .callout {
+            margin: 18px 0;
+            padding: 16px 18px;
+            border-radius: 13px;
+            background: var(--accent-soft);
+            color: var(--text);
+        }
+
+        .callout p {
+            margin: 0;
+        }
+
+        .contact-card {
+            display: grid;
+            gap: 6px;
+            margin-top: 16px;
+            padding: 18px 20px;
+            border: 1px solid var(--border);
+            border-radius: 14px;
+            background: var(--surface);
+        }
+
+        .contact-card .label {
+            color: var(--muted);
+            font-size: 0.8rem;
+            font-weight: 700;
+            letter-spacing: 0.08em;
+            text-transform: uppercase;
+        }
+
+        .contact-card a {
+            font-size: 1.08rem;
+            font-weight: 700;
+            overflow-wrap: anywhere;
+        }
+
+        .back-to-top {
+            display: inline-block;
+            margin-top: 6px;
+            font-size: 0.88rem;
+            font-weight: 650;
+        }
+
+        .site-footer {
+            border-top: 1px solid var(--border);
+            background: var(--surface);
+        }
+
+        .footer-inner {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            gap: 18px;
+            flex-wrap: wrap;
+            padding: 28px 0;
+            color: var(--muted);
+            font-size: 0.9rem;
+        }
+
+        .footer-inner p {
+            margin: 0;
+        }
+
+        .footer-nav {
+            display: flex;
+            gap: 18px;
+            flex-wrap: wrap;
+        }
+
+        .footer-nav a {
+            color: var(--muted);
+            text-decoration: none;
+            font-weight: 600;
+        }
+
+        .footer-nav a:hover {
+            color: var(--accent);
+        }
+
+        @media (max-width: 860px) {
+            .layout {
+                grid-template-columns: 1fr;
+                gap: 24px;
+                padding-top: 10px;
+            }
+
+            .toc {
+                position: static;
+                order: -1;
+            }
+
+            .toc ol {
+                grid-template-columns: repeat(2, minmax(0, 1fr));
+            }
+        }
+
+        @media (max-width: 620px) {
+            .wrap {
+                width: min(100% - 28px, 1080px);
+            }
+
+            .header-inner {
+                min-height: 64px;
+                align-items: flex-start;
+                padding: 14px 0;
+            }
+
+            .header-nav {
+                gap: 2px;
+            }
+
+            .header-nav a {
+                padding: 6px 9px;
+                font-size: 0.84rem;
+            }
+
+            .page-head {
+                padding-top: 42px;
+            }
+
+            .summary {
+                padding: 17px;
+            }
+
+            .toc ol {
+                grid-template-columns: 1fr;
+            }
+
+            .content section {
+                padding: 24px 0;
+            }
+        }
+
+        @media (prefers-reduced-motion: reduce) {
+            html {
+                scroll-behavior: auto;
+            }
+
+            *,
+            *::before,
+            *::after {
+                animation-duration: 0.01ms !important;
+                animation-iteration-count: 1 !important;
+                transition-duration: 0.01ms !important;
+                scroll-behavior: auto !important;
+            }
+        }
+
+        @media print {
+            :root {
+                --bg: #ffffff;
+                --surface: #ffffff;
+                --surface-soft: #f3f3f3;
+                --text: #000000;
+                --muted: #444444;
+                --border: #cccccc;
+                --shadow: none;
+            }
+
+            body {
+                background: #ffffff;
+            }
+
+            .site-header,
+            .toc,
+            .skip-link,
+            .back-to-top,
+            .site-footer {
+                display: none;
+            }
+
+            .layout {
+                display: block;
+                padding: 0;
+            }
+
+            .content {
+                max-width: none;
+            }
+
+            a {
+                color: #000000;
+            }
+
+            .content section {
+                break-inside: avoid;
+            }
+        }
+    </style>
+</head>
+
+<body>
+    <a class="skip-link" href="#main">Skip to content</a>
+
+    <header class="site-header">
+        <div class="wrap header-inner">
+            <a class="brand" href="./privacy-policy.html" aria-label="Dailio legal home">
+                <span class="brand-mark" aria-hidden="true">
+                    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"
+                        stroke-linejoin="round">
+                        <path d="M5 19c8.5 0 14-5.5 14-14C10.5 5 5 10.5 5 19Z" />
+                        <path d="M5 19c3.2-5.1 7.2-8.3 12-10" />
+                    </svg>
+                </span>
+                <span>Dailio</span>
+            </a>
+
+            <nav class="header-nav" aria-label="Legal documents">
+                <a href="./privacy-policy.html">Privacy Policy</a>
+                <a href="./terms-of-use.html" aria-current="page">Terms of Use</a>
+            </nav>
+        </div>
+    </header>
+
+    <main id="main" class="wrap">
+        <div class="page-head">
+            <p class="eyebrow">Legal</p>
+            <h1>Terms of Use</h1>
+            <p class="meta">
+                Effective date: <time datetime="2026-11-20">November 20, 2026</time>
+                &middot; Last updated: <time datetime="2026-11-20">November 20, 2026</time>
+            </p>
+            <p class="lede">
+                These Terms of Use explain the rules for using Dailio. By installing or using
+                the app, you agree to these Terms.
+            </p>
+
+            <div class="summary">
+                <strong>The short version</strong>
+                <p>
+                    Dailio is a local habit-tracking tool. Use it lawfully, keep your own backups,
+                    and do not rely on it for medical or professional advice. The app is provided
+                    &ldquo;as is,&rdquo; and you can stop using it at any time.
+                </p>
+            </div>
+        </div>
+
+        <div class="layout">
+            <aside class="toc" aria-label="On this page">
+                <h2>On this page</h2>
+                <ol>
+                    <li><a href="#acceptance">Acceptance of these Terms</a></li>
+                    <li><a href="#about">About Dailio</a></li>
+                    <li><a href="#eligibility">Eligibility</a></li>
+                    <li><a href="#license">License to use Dailio</a></li>
+                    <li><a href="#restrictions">Permitted use and restrictions</a></li>
+                    <li><a href="#your-content">Your content</a></li>
+                    <li><a href="#backups">Backups and data loss</a></li>
+                    <li><a href="#health">Health and professional disclaimer</a></li>
+                    <li><a href="#availability">Availability and updates</a></li>
+                    <li><a href="#paid">Paid features and Google Play</a></li>
+                    <li><a href="#third-parties">Third-party services</a></li>
+                    <li><a href="#ip">Intellectual property</a></li>
+                    <li><a href="#warranties">Disclaimer of warranties</a></li>
+                    <li><a href="#liability">Limitation of liability</a></li>
+                    <li><a href="#indemnity">Indemnification</a></li>
+                    <li><a href="#termination">Termination</a></li>
+                    <li><a href="#law">Governing law and consumer rights</a></li>
+                    <li><a href="#changes">Changes to these Terms</a></li>
+                    <li><a href="#general">General</a></li>
+                    <li><a href="#contact">Contact</a></li>
+                </ol>
+            </aside>
+
+            <article class="content">
+                <section id="acceptance">
+                    <h2>1. Acceptance of these Terms</h2>
+                    <p>
+                        These Terms of Use (&ldquo;Terms&rdquo;) form a legal agreement between you
+                        and <strong>bitmavrick</strong> (&ldquo;we&rdquo;, &ldquo;us&rdquo;, or
+                        &ldquo;our&rdquo;) regarding your use of the Dailio Android app and its
+                        related services (collectively, the &ldquo;app&rdquo;).
+                    </p>
+                    <p>
+                        By downloading, installing, accessing, or using Dailio, you agree to these
+                        Terms. If you do not agree, do not install or use the app. Your use of
+                        Dailio is also subject to Google Play&rsquo;s terms and policies.
+                    </p>
+                </section>
+
+                <section id="about">
+                    <h2>2. About Dailio</h2>
+                    <p>
+                        Dailio is a habit-tracking app that lets you create habits, set schedules and
+                        reminders, record completions and notes, review your activity, and manage
+                        your data locally on your device. Dailio does not require an account and is
+                        designed to work without sending your personal data to us.
+                    </p>
+                </section>
+
+                <section id="eligibility">
+                    <h2>3. Eligibility</h2>
+                    <p>
+                        You must be at least 13 years old, or the minimum age at which you can
+                        consent to digital services in your country, to use Dailio. If you are under
+                        the age of majority where you live, you must have permission from a parent
+                        or legal guardian to use the app.
+                    </p>
+                    <p>
+                        By using Dailio, you represent that you meet these requirements and that
+                        you will comply with all laws that apply to you.
+                    </p>
+                </section>
+
+                <section id="license">
+                    <h2>4. License to use Dailio</h2>
+                    <p>
+                        Subject to these Terms, we grant you a limited, personal, non-exclusive,
+                        non-transferable, non-sublicensable, and revocable license to install and
+                        use Dailio on devices you own or control, for your personal, non-commercial
+                        use.
+                    </p>
+                    <p>
+                        This license does not transfer ownership of Dailio or any intellectual
+                        property rights to you. All rights not expressly granted in these Terms are
+                        reserved.
+                    </p>
+                </section>
+
+                <section id="restrictions">
+                    <h2>5. Permitted use and restrictions</h2>
+                    <p>You agree not to:</p>
+                    <ul>
+                        <li>copy, modify, distribute, sell, lease, sublicense, or commercially exploit the app, except
+                            as permitted by law;</li>
+                        <li>reverse engineer, decompile, or disassemble the app, or attempt to extract its source code,
+                            except where applicable law expressly permits it;</li>
+                        <li>remove, alter, or obscure any copyright, trademark, or other proprietary notice in the app;
+                        </li>
+                        <li>use the app to violate any law, infringe anyone&rsquo;s rights, or encourage harmful or
+                            illegal activity;</li>
+                        <li>interfere with, disrupt, or attempt to gain unauthorized access to the app, its systems, or
+                            other users&rsquo; devices;</li>
+                        <li>misrepresent your affiliation with us or suggest that we endorse you or your content without
+                            permission; or</li>
+                        <li>use the app in a way that could damage, disable, overburden, or impair it.</li>
+                    </ul>
+                    <p>
+                        We may suspend or stop providing the app to you if we reasonably believe
+                        you have violated these Terms.
+                    </p>
+                </section>
+
+                <section id="your-content">
+                    <h2>6. Your content</h2>
+                    <p>
+                        You retain ownership of the habit names, descriptions, notes, moods, skip
+                        reasons, checklist items, and other content you create in Dailio
+                        (&ldquo;your content&rdquo;). Because your content is stored locally on your
+                        device and is not sent to us, we do not claim any ownership or license in it.
+                    </p>
+                    <p>
+                        You are responsible for your content, including making sure it is accurate
+                        and lawful and that you have the right to use it. You should not enter
+                        information that you are not permitted to store on your device.
+                    </p>
+                    <p>
+                        If you send us feedback, suggestions, or ideas, you allow us to use them
+                        without restriction or compensation. This does not give us access to your
+                        app data.
+                    </p>
+                </section>
+
+                <section id="backups">
+                    <h2>7. Backups and data loss</h2>
+                    <p>
+                        Dailio stores your data on your device. You are responsible for creating and
+                        keeping your own backups. Backup and CSV export files are not encrypted by
+                        Dailio, so you should store them securely and only share them with people you
+                        trust.
+                    </p>
+                    <p>
+                        We do not guarantee that your data will never be lost, corrupted, or
+                        inaccessible. Data may be lost if you uninstall the app, clear its storage,
+                        reset your device, lose or damage your device, or experience a software
+                        failure. To the maximum extent permitted by law, we are not responsible for
+                        any loss of data or for the cost of recovering it.
+                    </p>
+                    <p>
+                        You should test your backups periodically and keep more than one copy if
+                        your data is important to you.
+                    </p>
+                </section>
+
+                <section id="health">
+                    <h2>8. Health and professional disclaimer</h2>
+                    <p>
+                        Dailio is a habit-tracking tool. It is not a medical device, healthcare
+                        provider, therapist, or professional advisory service, and it does not
+                        provide medical, mental health, legal, financial, or other professional
+                        advice.
+                    </p>
+                    <p>
+                        The app is not intended to diagnose, treat, cure, or prevent any condition.
+                        Always seek the advice of a qualified professional with any questions you
+                        may have about your health or wellbeing. Do not disregard professional
+                        advice or delay seeking it because of something you read or recorded in
+                        Dailio.
+                    </p>
+                    <div class="callout">
+                        <p>
+                            If you are in an emergency or crisis, contact your local emergency
+                            services or a qualified crisis service immediately. Dailio is not a
+                            crisis-support service.
+                        </p>
+                    </div>
+                </section>
+
+                <section id="availability">
+                    <h2>9. Availability and updates</h2>
+                    <p>
+                        We may update, change, suspend, or discontinue Dailio or any of its features
+                        at any time. We may also stop supporting older Android versions or devices.
+                        We do not guarantee that the app will always be available, uninterrupted,
+                        error-free, or compatible with your device.
+                    </p>
+                    <p>
+                        Updates may change or remove features, and some updates may be required for
+                        the app to work properly. You are responsible for installing updates and
+                        keeping your device software up to date.
+                    </p>
+                </section>
+
+                <section id="paid">
+                    <h2>10. Paid features and Google Play</h2>
+                    <p>
+                        If we offer paid features or subscriptions, additional terms and pricing
+                        will be presented before you purchase them.
+                    </p>
+                    <p>
+                        Any purchases made through Google Play are processed by Google, not by us.
+                        Google Play&rsquo;s terms and refund policy apply to those purchases. We do
+                        not receive or process your payment card details.
+                    </p>
+                </section>
+
+                <section id="third-parties">
+                    <h2>11. Third-party services</h2>
+                    <p>
+                        Dailio is distributed through Google Play, and your use of Google Play is
+                        governed by Google&rsquo;s own terms and policies. The app may also link to
+                        external websites or services, including this Privacy Policy and these Terms.
+                        We do not control and are not responsible for the content, availability, or
+                        privacy practices of third-party services.
+                    </p>
+                    <p>
+                        Dailio is not affiliated with, endorsed by, or sponsored by Google or any
+                        other third-party service unless we expressly state otherwise.
+                    </p>
+                </section>
+
+                <section id="ip">
+                    <h2>12. Intellectual property</h2>
+                    <p>
+                        Dailio, including its name, logo, interface, design, software, and original
+                        content, is owned by us or our licensors and is protected by copyright,
+                        trademark, and other intellectual property laws. Except for the limited
+                        license in Section 4, these Terms do not grant you any rights in Dailio or
+                        its content.
+                    </p>
+                    <p>
+                        You may not use our name, logo, or branding without our prior written
+                        permission.
+                    </p>
+                </section>
+
+                <section id="warranties">
+                    <h2>13. Disclaimer of warranties</h2>
+                    <p>
+                        To the maximum extent permitted by law, Dailio is provided &ldquo;as is&rdquo;
+                        and &ldquo;as available,&rdquo; without warranties of any kind, whether
+                        express, implied, or statutory. We disclaim all implied warranties, including
+                        warranties of merchantability, fitness for a particular purpose,
+                        non-infringement, accuracy, reliability, security, and uninterrupted or
+                        error-free operation.
+                    </p>
+                    <p>
+                        Some jurisdictions do not allow the exclusion of certain warranties, so some
+                        of the above exclusions may not apply to you. Nothing in these Terms excludes
+                        warranties that cannot be excluded by law.
+                    </p>
+                </section>
+
+                <section id="liability">
+                    <h2>14. Limitation of liability</h2>
+                    <p>
+                        To the maximum extent permitted by law, we will not be liable for any
+                        indirect, incidental, special, consequential, exemplary, or punitive damages,
+                        or for any loss of data, profits, revenue, goodwill, or business
+                        interruption, arising out of or relating to your use of or inability to use
+                        Dailio, even if we have been advised of the possibility of such damages.
+                    </p>
+                    <p>
+                        To the maximum extent permitted by law, our total liability for all claims
+                        relating to Dailio will not exceed the greater of (a) the amount you paid us
+                        for the app in the twelve months before the claim or (b) USD 10.
+                    </p>
+                    <p>
+                        Nothing in these Terms limits any liability that cannot be limited by law,
+                        including your mandatory consumer rights.
+                    </p>
+                </section>
+
+                <section id="indemnity">
+                    <h2>15. Indemnification</h2>
+                    <p>
+                        To the maximum extent permitted by law, you agree to defend, indemnify, and
+                        hold harmless the developer of Dailio from and against any claims, damages,
+                        losses, liabilities, costs, and expenses (including reasonable legal fees)
+                        arising from your misuse of the app, your violation of these Terms, or your
+                        violation of any law or third-party right.
+                    </p>
+                </section>
+
+                <section id="termination">
+                    <h2>16. Termination</h2>
+                    <p>
+                        These Terms remain in effect until terminated. You may terminate them at any
+                        time by stopping use of Dailio and uninstalling the app. We may suspend or
+                        terminate your access to the app if you violate these Terms or if we
+                        discontinue the app.
+                    </p>
+                    <p>
+                        Sections that by their nature should survive termination will continue to
+                        apply, including sections about your content, disclaimers, limitation of
+                        liability, indemnification, and governing law.
+                    </p>
+                </section>
+
+                <section id="law">
+                    <h2>17. Governing law and consumer rights</h2>
+                    <p>
+                        These Terms are governed by the laws of the country in which the developer
+                        resides, without regard to conflict-of-law principles.
+                    </p>
+                    <p>
+                        Nothing in these Terms limits any mandatory rights you have under the
+                        consumer protection or privacy laws of your country of residence. If you
+                        believe you have a claim, please contact us first so we can try to resolve
+                        the issue informally.
+                    </p>
+                </section>
+
+                <section id="changes">
+                    <h2>18. Changes to these Terms</h2>
+                    <p>
+                        We may update these Terms from time to time. When we do, we will post the
+                        updated version at this location and change the effective date above. If the
+                        changes are material, we may also provide notice in the app or in the Google
+                        Play listing.
+                    </p>
+                    <p>
+                        Your continued use of Dailio after the updated Terms take effect means you
+                        accept the updated Terms. If you do not agree, you must stop using the app.
+                    </p>
+                </section>
+
+                <section id="general">
+                    <h2>19. General</h2>
+                    <p>
+                        If any provision of these Terms is found unenforceable, the remaining
+                        provisions will continue in full force and effect. Our failure to enforce a
+                        provision is not a waiver of our right to do so later.
+                    </p>
+                    <p>
+                        These Terms, together with our Privacy Policy and any additional terms
+                        presented in the app, are the entire agreement between you and us regarding
+                        Dailio. You may not assign your rights or obligations under these Terms
+                        without our consent, and we may assign ours as part of a merger,
+                        acquisition, or sale of the app.
+                    </p>
+                    <p>
+                        These Terms do not create any third-party beneficiary rights. Section
+                        headings are for convenience only. These Terms are provided in English; any
+                        translation is for convenience, and the English version controls to the
+                        extent permitted by law.
+                    </p>
+                </section>
+
+                <section id="contact">
+                    <h2>20. Contact</h2>
+                    <p>
+                        If you have questions about these Terms or Dailio, contact us:
+                    </p>
+                    <div class="contact-card">
+                        <span class="label">Support email</span>
+                        <a href="mailto:support@example.com">support@example.com</a>
+                    </div>
+                    <p style="margin-top:16px;">
+                        <a class="back-to-top" href="#main">&uarr; Back to top</a>
+                    </p>
+                </section>
+            </article>
+        </div>
+    </main>
+
+    <footer class="site-footer">
+        <div class="wrap footer-inner">
+            <p>&copy; 2026 Dailio. All rights reserved.</p>
+            <nav class="footer-nav" aria-label="Footer">
+                <a href="./privacy-policy.html">Privacy Policy</a>
+                <a href="./terms-of-use.html">Terms of Use</a>
+                <a href="mailto:support@example.com">Support</a>
+            </nav>
+        </div>
+    </footer>
+</body>
+
+</html>
